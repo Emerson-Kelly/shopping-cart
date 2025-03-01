@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-
+import { CartProvider } from "./context/CartContext";
 import { ColorModeProvider } from "./components/ui/color-mode";
 import { Provider } from "./components/ui/provider";
 import Shop from "./pages/Shop";
@@ -18,9 +18,9 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <Navbar />
-        <Home />
-        <Footer />
+          <Navbar />
+          <Home />
+          <Footer />
       </>
     ),
   },
@@ -28,9 +28,9 @@ const router = createBrowserRouter([
     path: "shop",
     element: (
       <>
-        <Navbar />
-        <Shop />
-        <Footer />
+          <Navbar />
+          <Shop />
+          <Footer />
       </>
     ),
   },
@@ -38,9 +38,9 @@ const router = createBrowserRouter([
     path: "cart",
     element: (
       <>
-        <Navbar />
-        <Cart />
-        <Footer />
+          <Navbar />
+          <Cart />
+          <Footer />
       </>
     ),
   },
@@ -61,7 +61,9 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ColorModeProvider forcedTheme="light">
       <Provider>
+      <CartProvider>
         <RouterProvider router={router} />
+        </CartProvider>
       </Provider>
     </ColorModeProvider>
   </StrictMode>

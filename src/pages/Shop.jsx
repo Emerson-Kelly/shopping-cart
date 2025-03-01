@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   Card,
   CardBody,
@@ -17,8 +17,12 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { LuTags } from "react-icons/lu";
+import { CartContext } from "../context/CartContext";
 
-function DisplayProductCards({ image, title, description, price, id }) {
+
+function DisplayProductCards({ image, title, description, price, id, quantity }) {
+    const { addToCart } = useContext(CartContext); // Get addToCart function
+
   return (
     <Card.Root maxW="sm" overflow="hidden">
       <Image
@@ -66,7 +70,9 @@ function DisplayProductCards({ image, title, description, price, id }) {
       </Card.Body>
       <Card.Footer gap="2">
         <Button variant="solid">Buy now</Button>
-        <Button variant="ghost">Add to cart</Button>
+        <Button variant="ghost" onClick={() => addToCart({ id, title, price, image, quantity })}>
+          Add to cart
+        </Button>
       </Card.Footer>
     </Card.Root>
   );
@@ -87,7 +93,7 @@ async function fetchDisplayProductCards() {
 }
 
 export default function Shop() {
-  console.log("DisplayProductCards:", DisplayProductCards);
+   {/*console.log("DisplayProductCards:", DisplayProductCards);*/}
 
   const [products, setProducts] = useState([]);
 
@@ -95,7 +101,7 @@ export default function Shop() {
     async function loadData() {
       const data = await fetchDisplayProductCards();
       setProducts(data);
-      console.log(data);
+      {/*console.log(data);*/}
     }
     loadData();
   }, []);
@@ -120,6 +126,7 @@ export default function Shop() {
               title={product.title}
               description={product.description}
               price={product.price}
+              quantity={0}
             />
           ))
         ) : (
