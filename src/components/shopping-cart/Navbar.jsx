@@ -1,6 +1,6 @@
-import { Box, Flex, Button, Spacer, Circle, Float, Link, Stack, Wrap } from "@chakra-ui/react";
+import { Box, Flex, Button, Spacer, Circle, Float, Stack, Wrap } from "@chakra-ui/react";
 import ShoppingBag from "../../assets/shopping-bag.svg?react";
-
+import { Outlet, Link } from "react-router-dom";
 
 export const FloatBasic = () => (
   <Box
@@ -23,7 +23,7 @@ export const FloatBasic = () => (
 
 const Navbar = () => {
   return (
- 
+ <>
     <Box as="nav" p={4} bg="teal.700">
       <Flex maxW="1200px" mx="auto" align="center">
         <Box fontWeight="bold" fontSize="xl" color="white">
@@ -33,23 +33,26 @@ const Navbar = () => {
         <Wrap gap="8">
        
         <Stack>
-          <Link variant="plain" color="white" href="#">
+          <Link variant="plain" color="white" to="/">
            Home
           </Link>
         </Stack>
 
         <Stack>
-          <Link variant="plain" color="white" href="#">
+          <Link variant="plain" color="white" to="/shop">
             Featured
           </Link>
         </Stack>
-        
-        <FloatBasic />
+
+        <Link to="/cart">
+                <FloatBasic />
+              </Link>
         </Wrap>
       </Flex>
     
     </Box>
-  
+       <Outlet />
+       </>
   );
 };
 
