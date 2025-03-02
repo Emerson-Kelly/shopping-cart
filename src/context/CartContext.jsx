@@ -39,13 +39,13 @@ export const CartProvider = ({ children }) => {
     );
   }
 
-  console.log(
+  {/*console.log(
     "Total Cart Quantity:",
     cartData
       .map((cartItem) => cartItem.quantity)
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0)
   );
-  console.log(cartData);
+  console.log(cartData);*/}
 
   return (
     <CartContext.Provider value={{ cartData, addToCart, removeFromCart }}>
