@@ -14,14 +14,20 @@ import {
   AccordionItemContent,
   AccordionItemTrigger,
   AccordionRoot,
-  Flex,
+  Flex
 } from "@chakra-ui/react";
 import { LuTags } from "react-icons/lu";
 import { CartContext } from "../context/CartContext";
-
+import { useNavigate } from "react-router-dom";
 
 function DisplayProductCards({ image, title, description, price, id, quantity }) {
-    const { addToCart } = useContext(CartContext); // Get addToCart function
+    const { addToCart } = useContext(CartContext);
+    const navigate = useNavigate();
+
+    const handleBuyNow = () => {
+        addToCart({ id, title, price, image, quantity: 1 });
+        navigate("/cart");
+      };
 
   return (
     <Card.Root maxW="sm" overflow="hidden">
@@ -69,7 +75,7 @@ function DisplayProductCards({ image, title, description, price, id, quantity })
         </Flex>
       </Card.Body>
       <Card.Footer gap="2">
-        <Button variant="solid">Buy now</Button>
+      <Button variant="solid" onClick={handleBuyNow}>Buy now</Button>
         <Button variant="ghost" onClick={() => addToCart({ id, title, price, image, quantity })}>
           Add to cart
         </Button>
