@@ -45,14 +45,14 @@ const Navbar = () => {
         <Spacer />
         <Wrap gap="8">
        
-        <Stack>
-          <Link variant="plain" color="white" to="/">
+        <Stack color="white" fontWeight={'500'}>
+          <Link variant="plain" to="/">
            Home
           </Link>
         </Stack>
 
-        <Stack>
-          <Link variant="plain" color="white" to="/shop">
+        <Stack color="white" fontWeight={'500'}>
+          <Link variant="plain" to="/shop">
             Featured
           </Link>
         </Stack>
