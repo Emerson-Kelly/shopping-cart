@@ -37,6 +37,7 @@ export const CartProvider = ({ children }) => {
           )
           .filter((item) => item.quantity > 0) // Remove item if quantity reaches 0
     );
+    console.log("remove item invoked");
   }
 
   {/*console.log(
