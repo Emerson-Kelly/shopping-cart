@@ -27,7 +27,7 @@ const Feature = ({ text, icon, iconBg }) => (
 const Home = () => {
     const navigate = useNavigate();
     return (
-        <Container maxW={'7xl'} py={12} textAlign={'center'}>
+        <Container maxW={'7xl'} py={8} textAlign={'center'}>
             <Stack align={'center'} spacing={10} gap={'2rem'}>
                 <Image src={Hero} alt="Shopping" w={{ base: '60%', md: '40%' }} />
                 <Heading fontSize={{ base: '4xl', md: '6xl' }} lineHeight={'1.2'}>

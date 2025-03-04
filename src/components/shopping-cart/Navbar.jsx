@@ -37,7 +37,7 @@ const Navbar = () => {
 
   return (
  <>
-    <Box as="nav" p={4} bg="teal.700">
+    <Box as="nav" p={4} bg="teal.700" position={'sticky'} width={'100%'} zIndex={'2'} top={'0'}>
       <Flex maxW="1200px" mx="auto" align="center">
         <Box fontWeight="bold" fontSize="xl" color="white">
           <Link to="/" >PrimePicks</Link>

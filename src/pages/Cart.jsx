@@ -26,13 +26,12 @@ import { CartContext } from "../context/CartContext";
 export default function Cart() {
   return (
     <Container margin={"2rem auto"}>
-      <Heading size="3xl" textAlign={"center"}>
+      <Heading size="3xl" textAlign={"center"} margin={'0 0 2rem 0'} >
         Checkout
       </Heading>
       <SimpleGrid
         columns={{ base: 1, md: 3 }} // 1 column on mobile, 3 on larger screens
         gap={6}
-        padding={"2rem 0 0 0"}
         templateAreas={{
           base: `"summary" "checkout"`, // Mobile: Order Summary first
           md: `"checkout checkout summary"`, // Desktop: Order Summary on the right
@@ -40,7 +39,7 @@ export default function Cart() {
       >
         {/* Order Summary - Shows First on Mobile */}
         <GridItem area={"summary"}>
-          <Card.Root maxW="100%" margin={"auto"}>
+          <Card.Root maxW="100%" margin={'auto'} >
             <Card.Header>
               <Card.Title>Order Summary</Card.Title>
             </Card.Header>
@@ -50,7 +49,7 @@ export default function Cart() {
 
         {/* Checkout Form */}
         <GridItem area={"checkout"}>
-          <Card.Root maxW="2xl" margin={"auto"}>
+          <Card.Root maxW="2xl" margin={'auto'}>
             <Card.Header>
               <Card.Title>Personal Information</Card.Title>
             </Card.Header>
