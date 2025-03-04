@@ -40,7 +40,7 @@ const Navbar = () => {
     <Box as="nav" p={4} bg="teal.700">
       <Flex maxW="1200px" mx="auto" align="center">
         <Box fontWeight="bold" fontSize="xl" color="white">
-          PrimePicks
+          <Link to="/" >PrimePicks</Link>
         </Box>
         <Spacer />
         <Wrap gap="8">
