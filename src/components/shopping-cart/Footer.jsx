@@ -67,7 +67,7 @@ const ListHeader = ({ children }) => {
 
 export default function Footer() {
   return (
-    <Box bg={"teal.700"} color={"white"}>
+    <Box bg={"teal.700"} color={"white"} >
       <Container as={Stack} maxW={"6xl"} py={10}>
         <SimpleGrid
           templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 2fr" }}
